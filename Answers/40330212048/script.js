@@ -57,6 +57,8 @@ function hanoi(from, via, to, n) {
 }
 
 //solved exh1 faster
+
+
 // function exHanoi_1(start, aux, end, n) {
 //     if (n <= 0 ) {
 //         return;
@@ -179,6 +181,7 @@ function exhanoi_3(A, B, C, n) {
         moves.push([B,A]);
         moves.push([B,C]);
         moves.push([A,C]);
+        return;
     }
     else{
         exhanoi_3(A,B,C,n-1);
@@ -191,17 +194,42 @@ function exhanoi_3(A, B, C, n) {
 
 }
 
-// before coding read about the extra rules for this ExHanoi
+
 function exhanoi_4(A, B, C, D, n) {
-    alert("your function is not complete")
-    return
-
+    if(n === 1){
+        moves.push([A,C]);
+        return;
+    }
+    else{
+        exhanoi_4(A,B,D,C,n-1);
+        moves.push([C,B]);
+        moves.push([A,C]);
+        exhanoi_4(D,C,B,A,n-1);
+    }
 }
-
-// before coding read about the extra rules for this ExHanoi
+//there is a better solution with less moves
 function exhanoi_5(A, B, C, D, n) {
-    alert("your function is not complete")
-    return
+    if (n <= 0 ) {
+        return;
+    }
+    if(n===1){
+        moves.push([C,D]);
+        moves.push([C,B]);
+        moves.push([B,A]);
+        moves.push([C,B]);
+        moves.push([A,B]);
+        moves.push([D,A]);
+        moves.push([A,B]);
+        moves.push([A,D]);
+        moves.push([D,C]);
+        hanoi(B,A,C,5);
+        return;
+    }
+    exhanoi_5(A,B,C,D,n-1);
+    hanoi(C,D,B,6*n-3)
+    moves.push([A,D]);
+    moves.push([D,C]);
+    hanoi(B,A,C,6*n-1);
 
 }
 
