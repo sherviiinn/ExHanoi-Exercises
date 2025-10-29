@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb1bd3b2-cbab-4337-9fb7-58ac4fa86474" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/css/normalize.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/css/responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/css/styles.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/globals/_colors.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/globals/_typography.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/items/_buttons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/items/_disk.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/items/_rods.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/sections/_background.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/sections/_layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Answers/40330212048/stylesheet/sass/styles.scss" afterDir="false" />
-    </list>
+    <list default="true" id="cb1bd3b2-cbab-4337-9fb7-58ac4fa86474" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +53,7 @@
       <updated>1761572871318</updated>
       <workItem from="1761572872417" duration="146000" />
       <workItem from="1761676549534" duration="3000" />
+      <workItem from="1761726523486" duration="4000" />
     </task>
     <servers />
   </component>

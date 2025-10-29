@@ -56,7 +56,95 @@ function hanoi(from, via, to, n) {
     hanoi(via, from, to, n - 1);
 }
 
+//solved exh1 faster
+// function exHanoi_1(start, aux, end, n) {
+//     if (n <= 0 ) {
+//         return;
+//     }
+//     if (n == 1){
+//         moves.push([start,end]);
+//         moves.push([aux,start]);
+//         moves.push([end,start]);
+//         moves.push([aux,end]);
+//         moves.push([start,aux]);
+//         moves.push([start,end]);
+//         moves.push([aux,end]);
+//         return;
+//     }
+//     else {
+//         exHanoi1_2(start, aux, end, n - 1);
+//         moves.push([start, end]);
+//         hanoi(aux, start, end, 6*n - 6);
+//         moves.push([aux,start]);
+//         hanoi(end,aux ,start , 6*n-5);
+//         moves.push([aux,end]);
+//         hanoi(start,aux,end,6*n-4)
+//     }
+    
+// }
+// function exHanoi1_2(start, aux, end, n) {
+//     if (n <= 0 ) {
+//         return;
+//     }
+//     if (n === 1){
+//         moves.push([aux,end]);
+//         moves.push([start,end]);
+//         moves.push([aux,start]);
+//         hanoi(end,aux,start,2);
+//         moves.push([end,aux]);
+//         hanoi(start,end,aux,3);
+//         moves.push([end,start]);
+//         hanoi(aux,end,start,4);
+//         moves.push([end,aux]);
+//         hanoi(start,end,aux,5);
+//         return;
+//     }
+//     exHanoi1_3(start, aux, end, n - 1);
+//     moves.push([aux,end]);
+//     hanoi(start, aux, end, 6*n - 5);
+//     moves.push([aux,start]);
+//     hanoi(end,aux ,start , 6*n - 4);
+//     moves.push([end,aux]);
+//     hanoi(start,end ,aux , 6*n - 3);
+//     moves.push([end,start]);
+//     hanoi(aux, end ,start , 6*n - 2);
+//     moves.push([end,aux]);
+//     hanoi(start,end ,aux , 6*n - 1);
 
+    
+// }
+// function exHanoi1_3(start, aux, end, n) {
+//     if (n <= 0 ) {
+//         return;
+//     }
+//     if (n === 1){
+//         moves.push([start,aux]);
+//         moves.push([end,start]);
+//         moves.push([aux,start]);
+//         moves.push([aux,end]);
+//         moves.push([start,end]);
+//         moves.push([aux,start]);
+//         moves.push([end,aux]);
+//         moves.push([end,start]);
+//         moves.push([aux,start]);
+//         moves.push([end,aux]);
+//         hanoi(start,end,aux,4);
+//         moves.push([end,start]);
+//         hanoi(aux,end,start,5);
+//         return;
+//     }
+
+//     exHanoi_1(start, aux, end, n - 1);
+//     moves.push([start, aux]);
+//     hanoi(end, start ,aux, 6 * (n - 1));
+//     moves.push([end,start]);
+//     hanoi(aux, end, start, 6*n-3);
+//     moves.push([end,aux]);
+//     hanoi(start, end, aux, 6 *n - 2);
+//     moves.push([end,start]);
+//     hanoi(aux, end, start, 6 *n - 1);
+
+// }
 function exHanoi_1(start, aux, end, n) {
     if (n <= 0 ) {
         return;
@@ -72,89 +160,34 @@ function exHanoi_1(start, aux, end, n) {
         return;
     }
     else {
-        exHanoi1_2(start, aux, end, n - 1);
-        moves.push([start, end]);
-        hanoi(aux, start, end, 6*n - 6);
-        moves.push([aux,start]);
-        hanoi(end,aux ,start , 6*n-5);
-        moves.push([aux,end]);
-        hanoi(start,aux,end,6*n-4)
-    }
-    
-}
-function exHanoi1_2(start, aux, end, n) {
-    if (n <= 0 ) {
-        return;
-    }
-    if (n === 1){
-        moves.push([aux,end]);
-        moves.push([start,end]);
-        moves.push([aux,start]);
-        hanoi(end,aux,start,2);
-        moves.push([end,aux]);
-        hanoi(start,end,aux,3);
-        moves.push([end,start]);
-        hanoi(aux,end,start,4);
-        moves.push([end,aux]);
-        hanoi(start,end,aux,5);
-        return;
-    }
-    exHanoi1_3(start, aux, end, n - 1);
-    moves.push([aux,end]);
-    hanoi(start, aux, end, 6*n - 5);
-    moves.push([aux,start]);
-    hanoi(end,aux ,start , 6*n - 4);
-    moves.push([end,aux]);
-    hanoi(start,end ,aux , 6*n - 3);
-    moves.push([end,start]);
-    hanoi(aux, end ,start , 6*n - 2);
-    moves.push([end,aux]);
-    hanoi(start,end ,aux , 6*n - 1);
-
-    
-}
-function exHanoi1_3(start, aux, end, n) {
-    if (n <= 0 ) {
-        return;
-    }
-    if (n === 1){
+        exHanoi_1(start,aux,end,n-1)
         moves.push([start,aux]);
-        moves.push([end,start]);
-        moves.push([aux,start]);
-        moves.push([aux,end]);
-        moves.push([start,end]);
-        moves.push([aux,start]);
-        moves.push([end,aux]);
-        moves.push([end,start]);
-        moves.push([aux,start]);
-        moves.push([end,aux]);
-        hanoi(start,end,aux,4);
-        moves.push([end,start]);
-        hanoi(aux,end,start,5);
-        return;
+        hanoi(end,start,aux, 6*(n-1));
+        hanoi(aux,start,end,6*n-3);
     }
-
-    exHanoi_1(start, aux, end, n - 1);
-    moves.push([start, aux]);
-    hanoi(end, start ,aux, 6 * (n - 1));
-    moves.push([end,start]);
-    hanoi(aux, end, start, 6*n-3);
-    moves.push([end,aux]);
-    hanoi(start, end, aux, 6 *n - 2);
-    moves.push([end,start]);
-    hanoi(aux, end, start, 6 *n - 1);
-
 }
 
 function exHanoi_2(A, B, C, D, n) {
-    hanoi(C,B,D,n);
-    hanoi(A,B,C,n);
-    hanoi(D,B,A,n);
+    hanoi(A,B,D,n);
+    hanoi(C,B,A,n);
+    hanoi(D,B,C,n);
 }
 
 function exhanoi_3(A, B, C, n) {
-    alert("your function is not complete")
-    return
+    if (n===1) {
+        moves.push([A,C]);
+        moves.push([B,A]);
+        moves.push([B,C]);
+        moves.push([A,C]);
+    }
+    else{
+        exhanoi_3(A,B,C,n-1);
+        hanoi(C,A,B,3*(n-1));
+        moves.push([A,C]);
+        hanoi(B,A,C,3*n-1);
+
+    }
+    
 
 }
 
