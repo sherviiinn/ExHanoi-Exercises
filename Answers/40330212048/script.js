@@ -175,28 +175,26 @@ function exHanoi_2(A, B, C, D, n) {
     hanoi(D,B,C,n);
 }
 
-function exhanoi_3(A, B, C, n) {
-    if (n===1) {
+
+function exhanoi_3(A, B, C, n){
+    if(n==1) {
         moves.push([A,C]);
         moves.push([B,A]);
         moves.push([B,C]);
         moves.push([A,C]);
         return;
     }
-    else{
+    else {
         exhanoi_3(A,B,C,n-1);
         hanoi(C,A,B,3*(n-1));
         moves.push([A,C]);
         hanoi(B,A,C,3*n-1);
-
     }
-    
-
 }
 
 
 function exhanoi_4(A, B, C, D, n) {
-    if(n === 1){
+    if(n == 1){
         moves.push([A,C]);
         return;
     }
@@ -207,29 +205,46 @@ function exhanoi_4(A, B, C, D, n) {
         exhanoi_4(D,C,B,A,n-1);
     }
 }
-//there is a better solution with less moves
+function adjustant_hanoi(A,B,C,n) {
+    if(n==1) {
+        moves.push([A,B]);
+        moves.push([B,C]);
+    }
+    else {
+        adjustant_hanoi(A,B,C,n-1);
+        moves.push([A,B]);
+        adjustant_hanoi(C,B,A,n-1);
+        moves.push([B,C]);
+        adjustant_hanoi(A,B,C,n-1);
+    }
+}
+function adjustant_hanoi2(A,B,C,n){
+    if(n==1) {
+        moves.push([A,B])
+    }
+    else {
+        adjustant_hanoi(A,B,C,n-1);
+        moves.push([A,B]);
+        adjustant_hanoi2(C,B,A,n-1);
+    }
+}
 function exhanoi_5(A, B, C, D, n) {
     if (n <= 0 ) {
         return;
     }
-    if(n===1){
-        moves.push([C,D]);
-        moves.push([C,B]);
-        moves.push([B,A]);
-        moves.push([C,B]);
-        moves.push([A,B]);
-        moves.push([D,A]);
-        moves.push([A,B]);
+    if(n==1){
+        adjustant_hanoi2(C,B,A,3);
         moves.push([A,D]);
         moves.push([D,C]);
-        hanoi(B,A,C,5);
-        return;
+        adjustant_hanoi2(B,C,D,5)
     }
-    exhanoi_5(A,B,C,D,n-1);
-    hanoi(C,D,B,6*n-3)
-    moves.push([A,D]);
-    moves.push([D,C]);
-    hanoi(B,A,C,6*n-1);
+    else {
+        exhanoi_5(A,B,C,D,n-1);
+        adjustant_hanoi2(C,B,A,6*n-3);
+        moves.push([A,D]);
+        moves.push([D,C]);
+        adjustant_hanoi2(B,C,D,6*n-1)
+    }
 
 }
 
