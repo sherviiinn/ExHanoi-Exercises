@@ -200,9 +200,9 @@ function exhanoi_4(A, B, C, D, n) {
     }
     else{
         exhanoi_4(A,B,D,C,n-1);
-        moves.push([C,B]);
         moves.push([A,C]);
-        exhanoi_4(D,C,B,A,n-1);
+        exhanoi_4(D,C,A,B,n-1);
+        exhanoi_4(A,B,C,D,n-1);
     }
 }
 function adjustant_hanoi(A,B,C,n) {
