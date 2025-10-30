@@ -209,7 +209,6 @@ function adjustant_hanoi(A,B,C,n) {
     if(n==1) {
         moves.push([A,B]);
         moves.push([B,C]);
-        return;
     }
     else {
         adjustant_hanoi(A,B,C,n-1);
@@ -219,10 +218,10 @@ function adjustant_hanoi(A,B,C,n) {
         adjustant_hanoi(A,B,C,n-1);
     }
 }
+
 function adjustant_hanoi2(A,B,C,n){
     if(n==1) {
-        moves.push([A,B]);
-        return;
+        moves.push([A,B])
     }
     else {
         adjustant_hanoi(A,B,C,n-1);
@@ -239,18 +238,12 @@ function exhanoi_5(A, B, C, D, n) {
         moves.push([A,D]);
         moves.push([D,C]);
         adjustant_hanoi2(B,C,D,5)
-        return;
     }
     else {
         exhanoi_5(A,B,C,D,n-1);
         adjustant_hanoi2(C,B,A,6*n-3);
         moves.push([A,D]);
         moves.push([D,C]);
-        moves.push([D, C]);
-        moves.push([B, C]);
-        moves.push([C, D]);
-        moves.push([B, C]);
-        moves.push([D, C]);
         adjustant_hanoi2(B,C,D,6*n-1)
     }
 
